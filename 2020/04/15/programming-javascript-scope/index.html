@@ -7,23 +7,25 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>태그 - GayaBlog</title>
+<title>[Javascript]함수의 범위(scope) - GayaBlog</title>
 
 
-<meta name="description" content="문화예술을 좋아하는 감성터지는 초보개발자 의 블로그">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GayaBlog">
-<meta property="og:url" content="https://choigaya.github.io/tags/index.html">
+<meta name="description" content="함수의 범위(scope) 에 대해 알아보도록 하겠습니다!scope 는 “범위” 라는 뜻입니다.   정확히는 프로그래밍 언어에서 생존기간 을 결정하게됩니다.전역범위(global scope) 와 지역범위(local scope) 두 가지로 구분 할 수 있는데 전역범위는 스크립트의 전체에서 참조되는 것을 의미하고,지역범위는 정해진 공간에서만 참조가 가능 한">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Javascript]함수의 범위(scope)">
+<meta property="og:url" content="https://choigaya.github.io/2020/04/15/programming-javascript-scope/index.html">
 <meta property="og:site_name" content="GayaBlog">
-<meta property="og:description" content="문화예술을 좋아하는 감성터지는 초보개발자 의 블로그">
+<meta property="og:description" content="함수의 범위(scope) 에 대해 알아보도록 하겠습니다!scope 는 “범위” 라는 뜻입니다.   정확히는 프로그래밍 언어에서 생존기간 을 결정하게됩니다.전역범위(global scope) 와 지역범위(local scope) 두 가지로 구분 할 수 있는데 전역범위는 스크립트의 전체에서 참조되는 것을 의미하고,지역범위는 정해진 공간에서만 참조가 가능 한">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="https://choigaya.github.io/images/og_image.png">
+<meta property="og:image" content="https://choigaya.github.io/images/test_img.png">
+<meta property="article:published_time" content="2020-04-15T01:46:02.000Z">
+<meta property="article:modified_time" content="2020-04-22T14:44:45.353Z">
 <meta property="article:author" content="Gaya Choi">
 <meta property="article:tag" content="Programming">
 <meta property="article:tag" content="Javascript">
 <meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://choigaya.github.io/images/og_image.png">
+<meta name="twitter:image" content="https://choigaya.github.io/images/test_img.png">
 
 
 
@@ -81,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="GayaBlog" height="28">
+                <img src="/images/logo.svg" alt="[Javascript]함수의 범위(scope)" height="28">
             
             </a>
         </div>
@@ -98,7 +100,7 @@
                 <a class="navbar-item"
                 href="/categories">Categories</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
@@ -130,39 +132,77 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                태그
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/test_img.png" alt="[Javascript]함수의 범위(scope)">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-15T01:46:02.000Z">2020-04-15</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Javascript/">
-                        <span class="tag">Javascript</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Javascript/">Javascript</a>
                 </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Programming/">
-                        <span class="tag">Programming</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/web/">
-                        <span class="tag">web</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 439 단어)
+                </span>
+                
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [Javascript]함수의 범위(scope)
+            
+        </h1>
+        <div class="content">
+            <p>
+  함수의 범위(scope) 에 대해 알아보도록 하겠습니다!scope 는 “범위” 라는 뜻입니다.
+  정확히는 프로그래밍 언어에서 생존기간 을 결정하게됩니다.전역범위(global scope) 와 지역범위(local scope) 두 가지로 구분 할 수 있는데 전역범위는 스크립트의 전체에서 참조되는 것을 의미하고,지역범위는 정해진 공간에서만 참조가 가능 한 것을 말합니다.
+</p>
+<a id="more"></a>
+
+<p><img src="scope001.png"><br/></p>
+<h1 id="1-전역변수-와-지역변수"><a href="#1-전역변수-와-지역변수" class="headerlink" title="1.전역변수 와 지역변수"></a>1.전역변수 와 지역변수</h1><p>1.전역변수 와 지역변수</p>
+<p>전역범위 안에 name 이라는 변수 가 정의 되어있습니다.name 은 전역변수(global variable) 라고 정의합니다.전역변수 는 스크립트 의 모든 구역 에서 사용이 가능합니다.window 객체 에 변수를 만들게 됩니다.참고로 window 객체는 전역객체입니다.전역객체는 브라우저의 전체를 담당하는 객체라고 아시면 됩니다.지역범위 안에있는 변수는 지역변수(local variable)가 됩니다.정해진 구역에서만 사용이 가능하답니다.</p>
+<p>지역범위 안에 변수가 존재하지 않는다는 것을 알아차리고,전역범위 안에 있는 name 을 참조하게 되어 가져오게 됩니다.따라서 위의 코드 결과는 “gaya”가 출력됩니다.</p>
+<p>그렇다면 다음의 소스코드에서 결과 값은 어떻게 될까요? “choigaya” 가 됩니다.지역범위 안에 name 변수가 존재하기 때문이죠.위에서 언급한 범위(scope) 특성을 이해하셨다면 쉬우실것입니다. </p>
+<p><img src="scope002.png"></br></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Javascript/" rel="tag">Javascript</a>, <a class="has-link-grey -link" href="/tags/Programming/" rel="tag">Programming</a>, <a class="has-link-grey -link" href="/tags/web/" rel="tag">web</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
-</div></div>
+</div>
+
+
+
+
+
+
+</div>
                 
 
 
@@ -552,7 +592,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="GayaBlog" height="28">
+                    <img src="/images/logo.svg" alt="[Javascript]함수의 범위(scope)" height="28">
                 
                 </a>
                 <p class="is-size-7">
