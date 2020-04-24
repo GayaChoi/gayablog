@@ -7,6 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<link rel="canonical" href="https://choigaya.github.io/2020/04/15/programming-javascript-scope/"/>
 <title>[Javascript]함수의 범위(scope) - GayaBlog</title>
 
 
@@ -19,7 +20,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://choigaya.github.io/images/test_img.png">
 <meta property="article:published_time" content="2020-04-15T01:46:02.000Z">
-<meta property="article:modified_time" content="2020-04-23T09:31:34.538Z">
+<meta property="article:modified_time" content="2020-04-24T16:19:51.815Z">
 <meta property="article:author" content="Gaya Choi">
 <meta property="article:tag" content="Programming">
 <meta property="article:tag" content="Javascript">
@@ -77,7 +78,7 @@
 
 <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="is-3-column">
+<body class="is-2-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
@@ -111,13 +112,17 @@
             <div class="navbar-end">
                 
                     
-                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/GayaChoi">
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/choigaya">
                         
                         <i class="fab fa-github"></i>
                         
                     </a>
                     
                 
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
                 
                 
                 <a class="navbar-item search" title="검색" href="javascript:;">
@@ -132,7 +137,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-image">
@@ -155,7 +160,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5분 읽기 (대략 758 단어)
+                    5분 읽기 (대략 824 단어)
                 </span>
                 
                 
@@ -174,16 +179,26 @@
 </p>
 <a id="more"></a>
 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> name = <span class="string">"gaya"</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">say</span></span>() &#123;</span><br><span class="line">  alert(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="scope001.png"><br/></p>
 <h1 id="1-전역변수-와-지역변수"><a href="#1-전역변수-와-지역변수" class="headerlink" title="1.전역변수 와 지역변수"></a>1.전역변수 와 지역변수</h1><p>전역범위 안에 name 이라는 변수 가 정의 되어있습니다.name 은 전역변수(global variable) 라고 정의합니다.전역변수 는 스크립트 의 모든 구역 에서 사용이 가능합니다.window 객체 에 변수를 만들게 됩니다.참고로 window 객체는 전역객체입니다.전역객체는 브라우저의 전체를 담당하는 객체라고 아시면 됩니다.지역범위 안에있는 변수는 지역변수(local variable)가 됩니다.정해진 구역에서만 사용이 가능하답니다.</p>
 <p>지역범위 안에 변수가 존재하지 않는다는 것을 알아차리고,전역범위 안에 있는 name 을 참조하게 되어 가져오게 됩니다.따라서 위의 코드 결과는 “gaya”가 출력됩니다.</p>
 <p>그렇다면 다음의 소스코드에서 결과 값은 어떻게 될까요? “choigaya” 가 됩니다.지역범위 안에 name 변수가 존재하기 때문이죠.위에서 언급한 범위(scope) 특성을 이해하셨다면 쉬우실것입니다. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"gaya"</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">say</span></span>() &#123;</span><br><span class="line">  var name = <span class="string">"choigaya"</span>;</span><br><span class="line">  alert(name);</span><br><span class="line">&#125;</span><br><span class="line">say();</span><br></pre></td></tr></table></figure>
 <p><img src="scope002.png"></br></p>
 <h1 id="2-렉시컬스코프"><a href="#2-렉시컬스코프" class="headerlink" title="2.렉시컬스코프"></a>2.렉시컬스코프</h1><p>렉시컬(lexical) 이란 함수가 선언될 때 참조 하게 되는 특성입니다.정적 스코프(static scope) 라고도 부릅니다.보통 프로그래밍 언어들은 이방식을 따릅니다.</p>
-<p><img src="scope003.png"></br></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"gaya"</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>() &#123;</span><br><span class="line">  console.log(name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>() &#123;</span><br><span class="line">  name = <span class="string">"choigaya"</span>;</span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+
 <p>위의 코드는 choigaya 가 두 번 출력됩니다.f1함수 가 호출되면서 전역변수 name 의 값을 gaya 에서 choigaya 로 수정 하였기때문이죠.전역변수 name은 f1,f2함수 모두 참조할 수 있습니다.</p>
-<p>다음 코드를 보겠습니다. f1 함수가 호출되고,자신의 지역 내부 에 name 을 선언합니다.즉,지역변수를 선언하게됩니다.그후 name 을 호출하게 되고,choigaya 라는 결과 가 출력됩니다.다음으로 f2함수가 실행되지만 아무것도 출력되지 않습니다.왜냐하면 렉시컬 의 특성때문입니다!f2 함수에는 선언과 동시에 자신의 범위에 name 이 존재하지 않으니 전역객체 안의 변수를 찾아보겠지만 없기때문에 아무것도 출력될수 없습니다.가장 중요한것은 렉시컬특성 으로 인해 f2함수는 f1함수를 참조 할 수없다는 점입니다. </p>
-<p><img src="scope004.png"></br></p>
+<p>다음 코드를 보겠습니다. f1 함수가 호출되고,자신의 지역 내부 에 name 을 선언합니다.즉,지역변수를 선언하게됩니다.그후 name 을 호출하게 되고,choigaya 라는 결과 가 출력됩니다.다음으로 f2함수가 실행되지만 아무것도 출력되지 않습니다.왜냐하면 렉시컬 의 특성때문입니다!f2 함수에는 선언과 동시에 자신의 범위에 name 이 존재하지 않으니 전역객체 안의 변수를 찾아보겠지만 없기때문에 아무것도 출력될수 없습니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>() &#123;</span><br><span class="line">  var name = <span class="string">"choigaya"</span>;</span><br><span class="line">  console.log(name);</span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>() &#123;</span><br><span class="line">  console.log(name);</span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+<p>3.호이스팅</p>
+<p>호이스팅(Hoisting)은 ‘끌어올리다’ 라는 의미를 갖고 있습니다.아래의 코드를 보시죠.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(value);</span><br><span class="line">var value = <span class="string">"gaya"</span>;</span><br><span class="line">hoistingFunc();</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">hoistingFunc</span></span>() &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
 
         </div>
         
@@ -232,146 +247,33 @@
 </div>
 </div>
                 
+                
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-3 column-right is-sticky">
     
         
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered" style="flex-shrink: 1">
-                <div>
-                    
-                    <figure class="image is-128x128 has-mb-6">
-                        <img class="is-rounded" src="/images/avatar.png" alt="Gaya">
-                    </figure>
-                    
-                    <p class="is-size-4 is-block">
-                        Gaya
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        피드백은 언제나 환영합니다:)
-                    </p>
-                    
-                    
-                </div>
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    카탈로그
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#1-전역변수-와-지역변수">
+        <span class="has-mr-6">1</span>
+        <span>1.전역변수 와 지역변수</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-렉시컬스코프">
+        <span class="has-mr-6">2</span>
+        <span>2.렉시컬스코프</span>
+        </a></li></ul>
             </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        포스트
-                    </p>
-                    <a href="/archives">
-                        <p class="title has-text-weight-normal">
-                            1
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        카테고리
-                    </p>
-                    <a href="/categories">
-                        <p class="title has-text-weight-normal">
-                            2
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        태그
-                    </p>
-                    <a href="/tags">
-                        <p class="title has-text-weight-normal">
-                            3
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </nav>
-        
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/GayaChoi" target="_blank" rel="noopener">
-                팔로우</a>
-        </div>
-        
-        
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Github" href="https://github.com/GayaChoi">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Facebook" href="https://www.facebook.com/pesdernak">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
-                title="Blogger" href="https://blog.naver.com/woosung827">
-                
-                <i class="fab fa-blogger"></i>
-                
-            </a>
-            
-        </div>
-        
-    </div>
-</div>
-    
-        
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            링크
-        </h3>
-        <ul class="menu-list">
-        
-            <li>
-                <a class="level is-mobile" href="https://github.com/GayaChoi" target="_blank" rel="noopener">
-                    <span class="level-left">
-                        <span class="level-item">Github</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">github.com</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="https://blog.naver.com/woosung827" target="_blank" rel="noopener">
-                    <span class="level-left">
-                        <span class="level-item">Blogger</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">blog.naver.com</span>
-                    </span>
-                </a>
-            </li>
-        
-        </ul>
         </div>
     </div>
-</div>
 
     
         
@@ -400,210 +302,6 @@
             </span>
         </a></li></ul></li>
             </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            태그 클라우드
-        </h3>
-        <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            최근 글
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2020/04/15/programming-javascript-scope/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/test_img.png" alt="[Javascript]함수의 범위(scope)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-15T01:46:02.000Z">2020-04-15</time></div>
-                    <a href="/2020/04/15/programming-javascript-scope/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Javascript]함수의 범위(scope)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Javascript/">Javascript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            아카이브
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/04/">
-                <span class="level-start">
-                    <span class="level-item">4월 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                태그
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Javascript/">
-                        <span class="tag">Javascript</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Programming/">
-                        <span class="tag">Programming</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/web/">
-                        <span class="tag">web</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            태그 클라우드
-        </h3>
-        <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Programming/" style="font-size: 10px;">Programming</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            최근 글
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2020/04/15/programming-javascript-scope/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/test_img.png" alt="[Javascript]함수의 범위(scope)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-15T01:46:02.000Z">2020-04-15</time></div>
-                    <a href="/2020/04/15/programming-javascript-scope/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Javascript]함수의 범위(scope)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Javascript/">Javascript</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            아카이브
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/04/">
-                <span class="level-start">
-                    <span class="level-item">4월 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                태그
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Javascript/">
-                        <span class="tag">Javascript</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Programming/">
-                        <span class="tag">Programming</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/web/">
-                        <span class="tag">web</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
         </div>
     </div>
 </div>
