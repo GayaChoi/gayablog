@@ -20,7 +20,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://choigaya.github.io/images/test_img.png">
 <meta property="article:published_time" content="2020-04-15T01:46:02.000Z">
-<meta property="article:modified_time" content="2020-04-24T16:19:51.815Z">
+<meta property="article:modified_time" content="2020-04-24T16:45:36.911Z">
 <meta property="article:author" content="Gaya Choi">
 <meta property="article:tag" content="Programming">
 <meta property="article:tag" content="Javascript">
@@ -192,8 +192,7 @@
 <p>위의 코드는 choigaya 가 두 번 출력됩니다.f1함수 가 호출되면서 전역변수 name 의 값을 gaya 에서 choigaya 로 수정 하였기때문이죠.전역변수 name은 f1,f2함수 모두 참조할 수 있습니다.</p>
 <p>다음 코드를 보겠습니다. f1 함수가 호출되고,자신의 지역 내부 에 name 을 선언합니다.즉,지역변수를 선언하게됩니다.그후 name 을 호출하게 되고,choigaya 라는 결과 가 출력됩니다.다음으로 f2함수가 실행되지만 아무것도 출력되지 않습니다.왜냐하면 렉시컬 의 특성때문입니다!f2 함수에는 선언과 동시에 자신의 범위에 name 이 존재하지 않으니 전역객체 안의 변수를 찾아보겠지만 없기때문에 아무것도 출력될수 없습니다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>() &#123;</span><br><span class="line">  var name = <span class="string">"choigaya"</span>;</span><br><span class="line">  console.log(name);</span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>() &#123;</span><br><span class="line">  console.log(name);</span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
-<p>3.호이스팅</p>
-<p>호이스팅(Hoisting)은 ‘끌어올리다’ 라는 의미를 갖고 있습니다.아래의 코드를 보시죠.</p>
+<h1 id="3-호이스팅"><a href="#3-호이스팅" class="headerlink" title="3.호이스팅"></a>3.호이스팅</h1><p>호이스팅(Hoisting)은 ‘끌어올리다’ 라는 의미를 갖고 있습니다.아래의 코드를 보시죠.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(value);</span><br><span class="line">var value = <span class="string">"gaya"</span>;</span><br><span class="line">hoistingFunc();</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">hoistingFunc</span></span>() &#123;</span><br><span class="line">  console.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -270,6 +269,10 @@
         <a class="is-flex" href="#2-렉시컬스코프">
         <span class="has-mr-6">2</span>
         <span>2.렉시컬스코프</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-호이스팅">
+        <span class="has-mr-6">3</span>
+        <span>3.호이스팅</span>
         </a></li></ul>
             </div>
         </div>
