@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://choigaya.github.io/sitemap.xml
