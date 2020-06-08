@@ -12,7 +12,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Nanum Gothic', 'Nanum Gothic Coding', sans-serif, monospace;
+  font-family: "Nanum Gothic", "Nanum Gothic Coding", sans-serif, monospace;
 }
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
@@ -55,7 +55,7 @@ textarea {
 }
 .card {
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
 }
 .card + .card,
 .card + .column-right-shadow {
@@ -80,7 +80,7 @@ img.thumbnail {
   max-height: 1.75rem;
 }
 .navbar-main {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .navbar-main .navbar-menu,
 .navbar-main .navbar-start,
@@ -154,7 +154,7 @@ img.thumbnail {
 .pagination .pagination-link,
 .pagination .pagination-previous,
 .pagination .pagination-next {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .post-navigation {
   justify-content: space-around;
@@ -173,7 +173,7 @@ img.thumbnail {
 }
 .timeline .media:before,
 .timeline .media:last-child:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: calc(-5px - 1.5rem);
@@ -231,7 +231,7 @@ img.thumbnail {
   line-height: 0;
   overflow: hidden;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1), 0 0 1px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 .donate .qrcode img {
@@ -266,7 +266,7 @@ img.thumbnail {
     right: 0;
     bottom: 0;
     z-index: 99;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
   }
   #toc.is-active,
   #toc-mask.is-active {
@@ -447,7 +447,7 @@ figure.highlight pre code .hljs {
 }
 figure.highlight figcaption,
 figure.highlight .gutter {
-  background: rgba(200,200,200,0.15);
+  background: rgba(200, 200, 200, 0.15);
 }
 figure.highlight figcaption {
   margin: 0 !important;
